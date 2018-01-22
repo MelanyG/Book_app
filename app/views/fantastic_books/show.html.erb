@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @fantastic_book.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @fantastic_book.text %>
+</p>
+
+<h2>Comments</h2>
+<%= render @fantastic_book.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_fantastic_book_path(@fantastic_book) %> |
+<%= link_to 'Back', fantastic_books_path %>

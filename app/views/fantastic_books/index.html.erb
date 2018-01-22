@@ -1,0 +1,21 @@
+<h1>Listing books</h1>
+<%= link_to 'New book', new_fantastic_book_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @fantastic_books.each do |fantastic_book| %>
+    <tr>
+      <td><%= fantastic_book.title %></td>
+      <td><%= fantastic_book.text %></td>
+      <td><%= link_to 'Show', fantastic_book_path(fantastic_book) %></td>
+      <td><%= link_to 'Edit', edit_fantastic_book_path(fantastic_book) %></td>
+      <td><%= link_to 'Destroy', fantastic_book_path(fantastic_book),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
